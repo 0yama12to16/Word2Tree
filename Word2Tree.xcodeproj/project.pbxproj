@@ -16,6 +16,8 @@
 		022B93942A35C8BD0050D246 /* Word2TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B93932A35C8BD0050D246 /* Word2TreeTests.swift */; };
 		022B939E2A35C8BD0050D246 /* Word2TreeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B939D2A35C8BD0050D246 /* Word2TreeUITests.swift */; };
 		022B93A02A35C8BD0050D246 /* Word2TreeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B939F2A35C8BD0050D246 /* Word2TreeUITestsLaunchTests.swift */; };
+		022B93AE2A35CD0F0050D246 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B93AC2A35CD0F0050D246 /* CustomTableViewCell.swift */; };
+		022B93AF2A35CD0F0050D246 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 022B93AD2A35CD0F0050D246 /* CustomTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		022B93992A35C8BD0050D246 /* Word2TreeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Word2TreeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		022B939D2A35C8BD0050D246 /* Word2TreeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word2TreeUITests.swift; sourceTree = "<group>"; };
 		022B939F2A35C8BD0050D246 /* Word2TreeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word2TreeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		022B93AC2A35CD0F0050D246 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		022B93AD2A35CD0F0050D246 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				022B937C2A35C8BC0050D246 /* AppDelegate.swift */,
 				022B937E2A35C8BC0050D246 /* SceneDelegate.swift */,
 				022B93802A35C8BC0050D246 /* ViewController.swift */,
+				022B93AC2A35CD0F0050D246 /* CustomTableViewCell.swift */,
+				022B93AD2A35CD0F0050D246 /* CustomTableViewCell.xib */,
 				022B93822A35C8BC0050D246 /* Main.storyboard */,
 				022B93852A35C8BD0050D246 /* Assets.xcassets */,
 				022B93872A35C8BD0050D246 /* LaunchScreen.storyboard */,
@@ -233,6 +239,7 @@
 			files = (
 				022B93892A35C8BD0050D246 /* LaunchScreen.storyboard in Resources */,
 				022B93862A35C8BD0050D246 /* Assets.xcassets in Resources */,
+				022B93AF2A35CD0F0050D246 /* CustomTableViewCell.xib in Resources */,
 				022B93842A35C8BC0050D246 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +267,7 @@
 			files = (
 				022B93812A35C8BC0050D246 /* ViewController.swift in Sources */,
 				022B937D2A35C8BC0050D246 /* AppDelegate.swift in Sources */,
+				022B93AE2A35CD0F0050D246 /* CustomTableViewCell.swift in Sources */,
 				022B937F2A35C8BC0050D246 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
