@@ -13,12 +13,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tableView = UITableView(frame:self.view.bounds, style: .plain)
+        let tableView = UITableView(frame:CGRect(x: 0, y:0, width:view.bounds.width, height: view.bounds.height-200), style: .plain)
         tableView.delegate = self
         tableView.dataSource = self
         view.addSubview(tableView)
         let inputView = UITableView(frame:CGRect(x: 0, y:view.bounds.height-200, width:view.bounds.width, height: 200), style: .plain)
-        self.view.addSubview(inputView)
+        view.addSubview(inputView)
         tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
         tableView.rowHeight = 200
         inputView.register(UINib(nibName: "InputCell", bundle: nil), forCellReuseIdentifier: "InputCell")
@@ -28,10 +28,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return item.count
+        return 9
     }
     
-    let item = ["Cell 3","Cell 4","Cell 5","",""]
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomTableViewCell
@@ -40,20 +39,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     
-    
+    /**
     func inputView(_ inputView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 4
     }
     func inputView(_ inputView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = inputView.dequeueReusableCell(withIdentifier: "InputCell", for: indexPath) as! InputCell
         return cell
     }
-
-    
-    
-
-    
-    
+     **/
+    func inputTableView(_ inputTableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return 4
+        }
+        
+        func inputTableView(_ inputTableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = inputTableView.dequeueReusableCell(withIdentifier: "InputCell", for: indexPath) as! InputCell
+            return cell
+        }
 
 
 }
