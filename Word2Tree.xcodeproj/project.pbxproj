@@ -18,6 +18,8 @@
 		022B93A02A35C8BD0050D246 /* Word2TreeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B939F2A35C8BD0050D246 /* Word2TreeUITestsLaunchTests.swift */; };
 		022B93AE2A35CD0F0050D246 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022B93AC2A35CD0F0050D246 /* CustomTableViewCell.swift */; };
 		022B93AF2A35CD0F0050D246 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 022B93AD2A35CD0F0050D246 /* CustomTableViewCell.xib */; };
+		02BB9EC72A39133600E0F9B5 /* InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB9EC52A39133600E0F9B5 /* InputCell.swift */; };
+		02BB9EC82A39133600E0F9B5 /* InputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02BB9EC62A39133600E0F9B5 /* InputCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		022B939F2A35C8BD0050D246 /* Word2TreeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word2TreeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		022B93AC2A35CD0F0050D246 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		022B93AD2A35CD0F0050D246 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		02BB9EC52A39133600E0F9B5 /* InputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
+		02BB9EC62A39133600E0F9B5 /* InputCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				022B937C2A35C8BC0050D246 /* AppDelegate.swift */,
 				022B937E2A35C8BC0050D246 /* SceneDelegate.swift */,
 				022B93802A35C8BC0050D246 /* ViewController.swift */,
+				02BB9EC52A39133600E0F9B5 /* InputCell.swift */,
+				02BB9EC62A39133600E0F9B5 /* InputCell.xib */,
 				022B93AC2A35CD0F0050D246 /* CustomTableViewCell.swift */,
 				022B93AD2A35CD0F0050D246 /* CustomTableViewCell.xib */,
 				022B93822A35C8BC0050D246 /* Main.storyboard */,
@@ -237,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02BB9EC82A39133600E0F9B5 /* InputCell.xib in Resources */,
 				022B93892A35C8BD0050D246 /* LaunchScreen.storyboard in Resources */,
 				022B93862A35C8BD0050D246 /* Assets.xcassets in Resources */,
 				022B93AF2A35CD0F0050D246 /* CustomTableViewCell.xib in Resources */,
@@ -265,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02BB9EC72A39133600E0F9B5 /* InputCell.swift in Sources */,
 				022B93812A35C8BC0050D246 /* ViewController.swift in Sources */,
 				022B937D2A35C8BC0050D246 /* AppDelegate.swift in Sources */,
 				022B93AE2A35CD0F0050D246 /* CustomTableViewCell.swift in Sources */,

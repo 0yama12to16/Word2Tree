@@ -9,11 +9,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" rowHeight="175" id="KGk-i7-Jjw" customClass="CustomTableViewCell" customModule="Word2Tree" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="702" height="175"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customCell" rowHeight="216" id="KGk-i7-Jjw" customClass="CustomTableViewCell" customModule="Word2Tree" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="711" height="216"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="702" height="175"/>
+                <rect key="frame" x="0.0" y="0.0" width="711" height="216"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzU-aV-gCA">
@@ -21,6 +21,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                        <connections>
+                            <action selector="buttonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="AlN-0f-KPf"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PmF-gf-v3W">
                         <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
@@ -39,7 +42,11 @@
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="392.36641221374043" y="65.845070422535215"/>
+            <connections>
+                <outlet property="content" destination="22W-Uk-g4P" id="QcA-wD-ksB"/>
+                <outlet property="name" destination="PmF-gf-v3W" id="uJ4-CL-6IE"/>
+            </connections>
+            <point key="canvasLocation" x="264.8854961832061" y="40.140845070422536"/>
         </tableViewCell>
     </objects>
 </document>
