@@ -1,0 +1,6 @@
+framework module Pods_Word2TreeTests {
+  umbrella header "Pods-Word2TreeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
