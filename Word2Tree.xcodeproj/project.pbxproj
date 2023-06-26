@@ -20,6 +20,9 @@
 		022B93AF2A35CD0F0050D246 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 022B93AD2A35CD0F0050D246 /* CustomTableViewCell.xib */; };
 		02BB9EC72A39133600E0F9B5 /* InputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02BB9EC52A39133600E0F9B5 /* InputCell.swift */; };
 		02BB9EC82A39133600E0F9B5 /* InputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02BB9EC62A39133600E0F9B5 /* InputCell.xib */; };
+		3056C405D4C46E46C33A2FBA /* Pods_Word2Tree_Word2TreeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 905A35F01EE35C61B8671C07 /* Pods_Word2Tree_Word2TreeUITests.framework */; };
+		38249AA0EAC95F0053937975 /* Pods_Word2Tree.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA35D97A6E158839AFCD2ACB /* Pods_Word2Tree.framework */; };
+		3FDFD5BA2EAC2CDC80695EE0 /* Pods_Word2TreeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E23CCF3436C608F7459FE2 /* Pods_Word2TreeTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +60,15 @@
 		022B93AD2A35CD0F0050D246 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		02BB9EC52A39133600E0F9B5 /* InputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCell.swift; sourceTree = "<group>"; };
 		02BB9EC62A39133600E0F9B5 /* InputCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputCell.xib; sourceTree = "<group>"; };
+		5110674989422D50AAD40F8F /* Pods-Word2Tree-Word2TreeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Word2Tree-Word2TreeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Word2Tree-Word2TreeUITests/Pods-Word2Tree-Word2TreeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		905A35F01EE35C61B8671C07 /* Pods_Word2Tree_Word2TreeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Word2Tree_Word2TreeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94E23CCF3436C608F7459FE2 /* Pods_Word2TreeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Word2TreeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0B93557ED35E1EE591FB01 /* Pods-Word2Tree.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Word2Tree.debug.xcconfig"; path = "Target Support Files/Pods-Word2Tree/Pods-Word2Tree.debug.xcconfig"; sourceTree = "<group>"; };
+		E28013380446B4EEDA63FAE0 /* Pods-Word2Tree.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Word2Tree.release.xcconfig"; path = "Target Support Files/Pods-Word2Tree/Pods-Word2Tree.release.xcconfig"; sourceTree = "<group>"; };
+		E65F75D18E40BEC0F6737E54 /* Pods-Word2Tree-Word2TreeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Word2Tree-Word2TreeUITests.release.xcconfig"; path = "Target Support Files/Pods-Word2Tree-Word2TreeUITests/Pods-Word2Tree-Word2TreeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EA35D97A6E158839AFCD2ACB /* Pods_Word2Tree.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Word2Tree.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F09B3E68EE86DFF13856D032 /* Pods-Word2TreeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Word2TreeTests.release.xcconfig"; path = "Target Support Files/Pods-Word2TreeTests/Pods-Word2TreeTests.release.xcconfig"; sourceTree = "<group>"; };
+		F23DFDF72255BA2885D8B591 /* Pods-Word2TreeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Word2TreeTests.debug.xcconfig"; path = "Target Support Files/Pods-Word2TreeTests/Pods-Word2TreeTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38249AA0EAC95F0053937975 /* Pods_Word2Tree.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FDFD5BA2EAC2CDC80695EE0 /* Pods_Word2TreeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3056C405D4C46E46C33A2FBA /* Pods_Word2Tree_Word2TreeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +106,8 @@
 				022B93922A35C8BD0050D246 /* Word2TreeTests */,
 				022B939C2A35C8BD0050D246 /* Word2TreeUITests */,
 				022B937A2A35C8BC0050D246 /* Products */,
+				DE38F62D4E3279BB4FC41A9F /* Pods */,
+				2E416FBB0075FFBB4B214A04 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,6 +156,29 @@
 			path = Word2TreeUITests;
 			sourceTree = "<group>";
 		};
+		2E416FBB0075FFBB4B214A04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA35D97A6E158839AFCD2ACB /* Pods_Word2Tree.framework */,
+				905A35F01EE35C61B8671C07 /* Pods_Word2Tree_Word2TreeUITests.framework */,
+				94E23CCF3436C608F7459FE2 /* Pods_Word2TreeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE38F62D4E3279BB4FC41A9F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AA0B93557ED35E1EE591FB01 /* Pods-Word2Tree.debug.xcconfig */,
+				E28013380446B4EEDA63FAE0 /* Pods-Word2Tree.release.xcconfig */,
+				5110674989422D50AAD40F8F /* Pods-Word2Tree-Word2TreeUITests.debug.xcconfig */,
+				E65F75D18E40BEC0F6737E54 /* Pods-Word2Tree-Word2TreeUITests.release.xcconfig */,
+				F23DFDF72255BA2885D8B591 /* Pods-Word2TreeTests.debug.xcconfig */,
+				F09B3E68EE86DFF13856D032 /* Pods-Word2TreeTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,9 +186,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 022B93A32A35C8BD0050D246 /* Build configuration list for PBXNativeTarget "Word2Tree" */;
 			buildPhases = (
+				69785FB6B77611A04299DE24 /* [CP] Check Pods Manifest.lock */,
 				022B93752A35C8BC0050D246 /* Sources */,
 				022B93762A35C8BC0050D246 /* Frameworks */,
 				022B93772A35C8BC0050D246 /* Resources */,
+				B96785E55E52D35804B974C4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,6 +205,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 022B93A62A35C8BD0050D246 /* Build configuration list for PBXNativeTarget "Word2TreeTests" */;
 			buildPhases = (
+				25857D0032A49BC3C4ACA509 /* [CP] Check Pods Manifest.lock */,
 				022B938B2A35C8BD0050D246 /* Sources */,
 				022B938C2A35C8BD0050D246 /* Frameworks */,
 				022B938D2A35C8BD0050D246 /* Resources */,
@@ -181,9 +224,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 022B93A92A35C8BD0050D246 /* Build configuration list for PBXNativeTarget "Word2TreeUITests" */;
 			buildPhases = (
+				2BA60C9025B56952A024438C /* [CP] Check Pods Manifest.lock */,
 				022B93952A35C8BD0050D246 /* Sources */,
 				022B93962A35C8BD0050D246 /* Frameworks */,
 				022B93972A35C8BD0050D246 /* Resources */,
+				4F20334DA21E307A0E3F5AA6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -266,6 +311,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		25857D0032A49BC3C4ACA509 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Word2TreeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2BA60C9025B56952A024438C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Word2Tree-Word2TreeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F20334DA21E307A0E3F5AA6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Word2Tree-Word2TreeUITests/Pods-Word2Tree-Word2TreeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Word2Tree-Word2TreeUITests/Pods-Word2Tree-Word2TreeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Word2Tree-Word2TreeUITests/Pods-Word2Tree-Word2TreeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69785FB6B77611A04299DE24 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Word2Tree-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B96785E55E52D35804B974C4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Word2Tree/Pods-Word2Tree-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Word2Tree/Pods-Word2Tree-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Word2Tree/Pods-Word2Tree-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		022B93752A35C8BC0050D246 /* Sources */ = {
@@ -448,11 +596,13 @@
 		};
 		022B93A42A35C8BD0050D246 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA0B93557ED35E1EE591FB01 /* Pods-Word2Tree.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JMP45327K5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Word2Tree/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -475,11 +625,13 @@
 		};
 		022B93A52A35C8BD0050D246 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E28013380446B4EEDA63FAE0 /* Pods-Word2Tree.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = JMP45327K5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Word2Tree/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -502,6 +654,7 @@
 		};
 		022B93A72A35C8BD0050D246 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F23DFDF72255BA2885D8B591 /* Pods-Word2TreeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -521,6 +674,7 @@
 		};
 		022B93A82A35C8BD0050D246 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F09B3E68EE86DFF13856D032 /* Pods-Word2TreeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -540,6 +694,7 @@
 		};
 		022B93AA2A35C8BD0050D246 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5110674989422D50AAD40F8F /* Pods-Word2Tree-Word2TreeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -557,6 +712,7 @@
 		};
 		022B93AB2A35C8BD0050D246 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E65F75D18E40BEC0F6737E54 /* Pods-Word2Tree-Word2TreeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

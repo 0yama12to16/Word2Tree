@@ -11,6 +11,9 @@ class CustomTableViewCell: UITableViewCell {
 
     @IBOutlet var content: UILabel!
     @IBOutlet var name: UILabel!
+    
+    var superView1: ViewController! = nil
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
