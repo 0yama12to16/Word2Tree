@@ -9,18 +9,14 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
 
-    @IBOutlet var content: UILabel!
-    @IBOutlet var name: UILabel!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var content: UILabel!
     
     var superView1: ViewController! = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-    }
-
-    @IBAction func buttonTapped(_ sender: Any) {
-        content.text = "ボタンが押されました。"
     }
     
     

@@ -12,7 +12,8 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var tableView1: UITableView!
     var tableView2: UITableView!
-    var item: [String] = []
+    var item = [["A","今日は寝坊をしたため気分が悪いです"]]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == tableView1{
-            return 9
+            return item.count
         } else if tableView == tableView2 {
             return 1
         }
@@ -48,8 +49,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         var cell: UITableViewCell!
         if tableView == tableView1 {
             cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomTableViewCell
+            if let customCell = cell as? CustomTableViewCell {
+                customCell.content.text = item[indexPath.row][1]
+                customCell.name.text = item[indexPath.row][0]
+            }
         } else if tableView == tableView2 {
             cell = tableView.dequeueReusableCell(withIdentifier: "inputCell", for: indexPath) as! InputCell
+            if let inputCell = cell as? InputCell {
+                inputCell.superView = self
+            }
         }
         return cell
     }
