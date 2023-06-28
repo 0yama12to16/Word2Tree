@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="名前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PmF-gf-v3W">
-                        <rect key="frame" x="20" y="15" width="390" height="35"/>
+                        <rect key="frame" x="67" y="15" width="390" height="35"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -42,6 +42,10 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="人物の無料素材" translatesAutoresizingMaskIntoConstraints="NO" id="L7C-HC-uy8">
+                        <rect key="frame" x="12" y="15" width="35" height="35"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -55,6 +59,7 @@
     <resources>
         <image name="ハートのマーク2" width="256" height="256"/>
         <image name="リツイートアイコン(1)" width="256" height="256"/>
+        <image name="人物の無料素材" width="256" height="256"/>
         <image name="吹き出しのアイコン17" width="256" height="256"/>
     </resources>
 </document>
