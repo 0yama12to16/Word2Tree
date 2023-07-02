@@ -18,19 +18,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView1 = UITableView(frame:CGRect(x: 0, y:0, width:view.bounds.width, height: view.bounds.height-400), style: .plain)
+        tableView1 = UITableView(frame:CGRect(x: 0, y:0, width:view.bounds.width, height: view.bounds.height-350), style: .plain)
         tableView1.delegate = self
         tableView1.dataSource = self
         view.addSubview(tableView1)
         tableView1.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
         tableView1.rowHeight = 200
         
-        tableView2 = UITableView(frame:CGRect(x: 0, y:view.bounds.height-400, width:view.bounds.width, height: 400), style: .plain)
+        tableView2 = UITableView(frame:CGRect(x: 0, y:view.bounds.height-350, width:view.bounds.width, height: 400), style: .plain)
         tableView2.delegate = self
         tableView2.dataSource = self
         view.addSubview(tableView2)
         tableView2.register(UINib(nibName: "InputCell", bundle: nil), forCellReuseIdentifier: "inputCell")
-        tableView2.rowHeight = 400
+        tableView2.rowHeight = 350
         
         // Do any additional setup after loading the view.
     }
@@ -58,6 +58,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             if let inputCell = cell as? InputCell {
                 inputCell.superView = self
             }
+            
+            var cellSelectedBgView = UIView()
+            cellSelectedBgView.backgroundColor = UIColor.white
+            cell.selectedBackgroundView = cellSelectedBgView
+            
         }
         return cell
     }
