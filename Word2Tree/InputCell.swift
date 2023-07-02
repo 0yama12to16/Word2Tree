@@ -43,7 +43,7 @@ class InputCell: UITableViewCell {
     func doPost(prompt: String){
             let parameters = ["prompt":prompt] as [String : String]
             
-            AF.request("http://localhost:5000/toTree", method: .post, parameters:  parameters , encoding: JSONEncoding.default, headers: nil).response { response in
+            AF.request("http://192.168.1.2:11000/toTree", method: .post, parameters:  parameters , encoding: JSONEncoding.default, headers: nil).response { response in
                 print(response.value!!)
                     }
         }
