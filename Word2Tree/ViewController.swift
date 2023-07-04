@@ -13,6 +13,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var tableView1: UITableView!
     var tableView2: UITableView!
     var item = [["A","今日は寝坊をしたため気分が悪いです"]]
+    
+    var keyboardFlag: Bool = false
 
     
     override func viewDidLoad() {
@@ -38,13 +40,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     @objc func openKeyboard(notification: Notification) {
-        if let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue{
-            self.tableView2.frame.origin.y -= keyboardRect.height
+        if (!keyboardFlag){
+            if let keyboardRect = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue{
+                self.tableView2.frame.origin.y -= keyboardRect.height
+            }
+            keyboardFlag = true
         }
     }
     
     @objc func closeKeyboard(notification: Notification) {
-        self.tableView2.frame.origin.y = view.bounds.height-200
+        if keyboardFlag {
+            self.tableView2.frame.origin.y = view.bounds.height-200
+            keyboardFlag = false
+        }
     }
         
     
