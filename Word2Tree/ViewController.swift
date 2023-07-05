@@ -12,7 +12,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var tableView1: UITableView!
     var tableView2: UITableView!
-    var item = [["A","今日は寝坊をしたため気分が悪いです"]]
+    var item:[[String]] = []
     
     var keyboardFlag: Bool = false
 

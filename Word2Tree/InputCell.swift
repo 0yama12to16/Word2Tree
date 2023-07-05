@@ -29,7 +29,7 @@ class InputCell: UITableViewCell {
         let indexPath = IndexPath(row: superView.item.count - 1, section: 0)
         superView.tableView1.insertRows(at: [indexPath], with: .automatic)
         
-        //doPost(prompt: content.text!)
+        doPost(prompt: content.text!)
         
         name.text = ""
         content.text = ""
