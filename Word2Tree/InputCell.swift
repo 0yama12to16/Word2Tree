@@ -74,6 +74,7 @@ class InputCell: UITableViewCell {
 }
 
 
+//以下プレーズホルダー付き、複数業テキストフィールドクラス
 @IBDesignable
 class HintTextView: UITextView {
     
