@@ -33,7 +33,7 @@ func getEmoO(emoNoS: Int,content: String){
 }
 
 //バイナリ配列(Base64からUIImageに変換)
-func convertBase64ToImage(_ base64String: String) -> UIImage? {
+private func convertBase64ToImage(_ base64String: String) -> UIImage? {
     guard let imageData = Data(base64Encoded: base64String) else { return nil }
     return UIImage(data: imageData)
 }
