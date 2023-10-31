@@ -9,8 +9,6 @@ import UIKit
 import Alamofire
 
 class InputCell: UITableViewCell {
-
-    @IBOutlet var name: UITextField!
     @IBOutlet weak var content2: HintTextView!
     
     
@@ -43,17 +41,22 @@ class InputCell: UITableViewCell {
     }
 
     @IBAction func buttonTapped(_ sender: Any) {
-        superView.item.append([])
-        superView.item[superView.item.count-1].append(name.text!)
+        superView.item.append("")
         superView.item[superView.item.count-1].append(content2.text!)
-        print(superView.item)
         
         let indexPath = IndexPath(row: superView.item.count - 1, section: 0)
         superView.tableView1.insertRows(at: [indexPath], with: .automatic)
         
-        doPost(prompt: content2.text!)
         
-        name.text = ""
+        //テストのため以下をコメントアウト
+        //doPost(prompt: content2.text!)
+        //テストのため以下をコメントアウト
+        //getEmoO(emoNoS: 1, content: content2.text!)
+        //superView.secondVC.imageCounter += 1
+        //画像を保存
+        //viewContoroller_woodを更新
+        superView.secondVC.updateImage()
+        
         content2.text = ""
         content2.changeVisibility()
     }

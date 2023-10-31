@@ -11,6 +11,7 @@ import Alamofire
 var domain: String = "http://localhost"
 var port: String = "5000"
 
+//Done
 func postListNo(listNo: Int){
     let uri = domain+":"+port+"/postListNo?listNo="+String(listNo)
     AF.request(uri, method: .get, encoding: JSONEncoding.default, headers: nil).response { response in
@@ -18,6 +19,7 @@ func postListNo(listNo: Int){
     }
 }
 
+//Done
 func postPosLeaf(x: Double, y: Double){
     let uri = domain+":"+port+"/postPosLeaf?x="+String(x)+"&y="+String(y)
     AF.request(uri, method: .get, encoding: JSONEncoding.default, headers: nil).response { response in

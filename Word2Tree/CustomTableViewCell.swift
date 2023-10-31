@@ -8,9 +8,9 @@
 import UIKit
 
 class CustomTableViewCell: UITableViewCell {
+    
 
     @IBOutlet weak var leafBox: UIImageView!
-    @IBOutlet weak var name: UILabel!
     @IBOutlet weak var content: UILabel!
     
     var superView1: ViewController! = nil
