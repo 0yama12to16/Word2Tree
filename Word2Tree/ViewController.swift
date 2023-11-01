@@ -26,6 +26,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let secondVC = ViewController_wood()
     
     
+    
+    //ToDo：リストの情報が、メモリに保持されているので、フロントとの整合性を保つために、その日の分のリスト情報は、外部のファイルに出力しておき、次にアプリを開いた場合にそれを読み込んでからスタートする形。
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView_below_bar = UITableView(frame:CGRect(x:0,y:50,width:view.bounds.width,height:view.bounds.height),style:.plain)
@@ -50,7 +52,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         
-        tableView_list = UITableView(frame:CGRect(x:0,y:0,width:view.bounds.width/2,height:view.bounds.height),style:.plain)
+        tableView_list = UITableView(frame:CGRect(x:0,y:0,width:view.bounds.width/2,height:view.bounds.height-90),style:.plain)
         tableView_list.delegate = self
         tableView_list.dataSource = self
         tableView_below_bar.addSubview(tableView_list)

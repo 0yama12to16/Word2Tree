@@ -56,6 +56,10 @@ class ViewController_wood: UIViewController{
         Swift.print(type(of: location))
         var x = location.x
         var y = location.y
+        var xPerView = x/imageView.bounds.width
+        var yPerView = y/imageView.bounds.height
+        print(x,y)
+        print(xPerView,yPerView)
         //テストのため以下はコメントアウト
         //postPosLeaf(x: x, y: y)
     }
