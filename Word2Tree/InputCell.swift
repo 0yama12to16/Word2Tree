@@ -8,8 +8,9 @@
 import UIKit
 import Alamofire
 
-class InputCell: UITableViewCell {
+class InputCell: UITableViewCell{
     @IBOutlet weak var content2: HintTextView!
+    @IBOutlet weak var postButton: UIButton!
     
     
     var superView: ViewController!
@@ -32,10 +33,11 @@ class InputCell: UITableViewCell {
         
         content2.layer.borderWidth = 0.5
         content2.layer.cornerRadius = 5
-        
+        content2.setCell(inputcell: self)
         content2.hintText = "投稿内容\n例文：これから展示回るの楽しみです！\n           毎日暑すぎ！ムリ！\n           今日は寝坊してしまい気分が落ち込んでいます。"
-
         //content2.contentInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        
+        postButton.isEnabled = false
          
         
     }
@@ -44,6 +46,9 @@ class InputCell: UITableViewCell {
         superView.item.append("")
         superView.item[superView.item.count-1].append(content2.text!)
         
+        superView.emotionList.append(superView.selectedEmotion)
+        
+        
         let indexPath = IndexPath(row: superView.item.count - 1, section: 0)
         superView.tableView1.insertRows(at: [indexPath], with: .automatic)
         
@@ -51,14 +56,26 @@ class InputCell: UITableViewCell {
         //テストのため以下をコメントアウト
         //doPost(prompt: content2.text!)
         //テストのため以下をコメントアウト
-        //getEmoO(emoNoS: 1, content: content2.text!)
+        //getEmoO(emoNoS: superView.selectedEmotion, content: content2.text!)
+        //上記のhttpgetで得た客観的感情をViewControllerクラスに渡す。
+        //行を追加するよりも先にViewControllerクラスに客観的感情を渡す必要があるので、これを上記の処理より先に持ってきた方が良い？
         //superView.secondVC.imageCounter += 1
         //画像を保存
         //viewContoroller_woodを更新
         superView.secondVC.updateImage()
         
+        
+        //for test
+        print(content2.text.isEmpty)
+        
         content2.text = ""
         content2.changeVisibility()
+        
+        superView.selectedEmotion = 100
+        superView.isTextFilled = false
+        superView.imageView.image = UIImage(named: "color")
+        self.postButton.isEnabled = false
+        
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -73,6 +90,15 @@ class InputCell: UITableViewCell {
                 print(response.value!!)
                     }
         }
+//    func textViewDidChange(_ textView: UITextView){
+//        if (!textView.text.isEmpty && superView.selectedEmotion != 100){
+//            superView.isTextFilled = true
+//            postButton.isEnabled = true
+//        }else {
+//            superView.isTextFilled = false
+//            postButton.isEnabled = false
+//        }
+//    }
     
 }
 
@@ -81,6 +107,7 @@ class InputCell: UITableViewCell {
 @IBDesignable
 class HintTextView: UITextView {
     
+    var inputcell: InputCell? = nil
     // Placeholder として表示するテキスト
     var hintText = "" {
         didSet {
@@ -97,8 +124,11 @@ class HintTextView: UITextView {
         return label
     }()
     
-    // 追記: テキストの初期値を入れるときは textViewDidChange が発火しないのでこちらのメソッドを使用する
-    // （もっと良い方法がありそうですが...）
+    public func setCell(inputcell: InputCell){
+        self.inputcell = inputcell
+    }
+    
+    // テキストの初期値を入れるときは textViewDidChange が発火しないのでこちらのメソッドを使用する
     func setText(_ text: String) {
         self.text = text
         changeVisibility()
@@ -107,6 +137,7 @@ class HintTextView: UITextView {
     override init(frame: CGRect, textContainer: NSTextContainer?) {
         super.init(frame: frame, textContainer: textContainer)
         configure()
+        super.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -140,11 +171,28 @@ class HintTextView: UITextView {
             hintLabel.isHidden = true
         }
     }
+    func changeButtonStatus(_ textView: UITextView){
+        if (!textView.text.isEmpty && inputcell?.superView.selectedEmotion != 100){
+            inputcell?.postButton.isEnabled = true
+        }else {
+            inputcell?.postButton.isEnabled = false
+        }
+    }
+    func changeIsTextFilled_ViewController(_ textView: UITextView){
+        if (!textView.text.isEmpty){
+            inputcell?.superView.isTextFilled = true
+        } else {
+            inputcell?.superView.isTextFilled = false
+        }
+    }
 }
 
 extension HintTextView: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         // 3. TextView に文字が入力されているかどうかで Label の表示/非表示を切り替える
         changeVisibility()
+        changeButtonStatus(textView)
+        changeIsTextFilled_ViewController(textView)
+        
     }
 }

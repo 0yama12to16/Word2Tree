@@ -21,11 +21,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     //indexをリストIDとして利用
     var item: [String] = []
+    var emotionList: [Int] = []
     
     var keyboardFlag: Bool = false
     let secondVC = ViewController_wood()
     
+    var isTextFilled: Bool = false
+    //選択されている感情（default値は100）
+    var selectedEmotion: Int = 100
+    var inputcell: InputCell!
     
+    
+    
+    //ToDo：リストの情報が、メモリに保持されているので、フロントとの整合性を保つために、その日の分のリスト情報は、外部のファイルに出力しておき、次にアプリを開いた場合にそれを読み込んでからスタートする形。
+    //ToDo:tableView_listの下の方が見切れているので、サイズの調整
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView_below_bar = UITableView(frame:CGRect(x:0,y:50,width:view.bounds.width,height:view.bounds.height),style:.plain)
@@ -49,8 +58,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         
-        
-        tableView_list = UITableView(frame:CGRect(x:0,y:0,width:view.bounds.width/2,height:view.bounds.height),style:.plain)
+        tableView_list = UITableView(frame:CGRect(x:0,y:0,width:view.bounds.width/2,height:view.bounds.height-90),style:.plain)
         tableView_list.delegate = self
         tableView_list.dataSource = self
         tableView_below_bar.addSubview(tableView_list)
@@ -60,8 +68,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView_input.dataSource = self
         tableView_below_bar.addSubview(tableView_input)
         
-        imageView = UIImageView(image: UIImage(named: "sample_plutick"))
-        imageView.frame = CGRect(x: 25, y: 10, width: tableView_input.bounds.width-25, height: tableView_input.bounds.width-25) // 位置とサイズの設定
+        imageView = UIImageView(image: UIImage(named: "color"))
+        imageView.frame = CGRect(x: 40, y: 40, width: tableView_input.bounds.width-80, height: tableView_input.bounds.width-80) // 位置とサイズの設定
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGesture)
         tableView_input.addSubview(imageView)
         
         let borderLayer = CALayer()
@@ -69,7 +80,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         borderLayer.frame = CGRect(x: tableView_list.frame.width, y: 50, width: 1, height: tableView_list.frame.height)
         view.layer.addSublayer(borderLayer)
         
-
+        //Todo:tableViewがtableView1とtableView_listで二重になってるっぽい？
         tableView1 = UITableView(frame:CGRect(x: 0, y:0, width:view.bounds.width, height: view.bounds.height), style: .plain)
         tableView1.delegate = self
         tableView1.dataSource = self
@@ -91,6 +102,191 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         secondVC.modalPresentationStyle = .fullScreen
         secondVC.previousVC = self
             
+    }
+    
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        print(imageView.clipsToBounds)
+//        print("touched")
+//        let touch = touches.first!
+//        let location = touch.location(in: self.imageView)
+//        var x = location.x - imageView.bounds.width/2
+//        var y = location.y - imageView.bounds.height/2
+//
+//        var euclid: Double = sqrt((x*x)+(y*y))
+//        var cosxy = x/euclid
+//
+//        print(euclid,cosxy)
+//        //以降で原点からのピタゴラスと、cosを使って条件分岐を行う。
+//
+//    }
+    
+    
+    @objc func imageTapped(_ sender: UITapGestureRecognizer) {
+        
+        
+        //for test
+        print(isTextFilled)
+        if isTextFilled{
+            inputcell.postButton.isEnabled = true
+        }
+        
+            // タッチした位置を取得
+        let location = sender.location(in: sender.view)
+            // 座標を表示
+        var x: Double = location.x - imageView.bounds.width/2
+        var y: Double = -(location.y - imageView.bounds.height/2)
+        var euclid: Double = sqrt((x*x)+(y*y))
+        var cosxy: Double = x/euclid
+        var quadrant: Int = 0
+        if(x >= 0 && y >= 0){
+            quadrant = 1
+        }else if(y >= 0 && x < 0){
+            quadrant = 2
+        }else if(y < 0 && x < 0){
+            quadrant = 3
+        }else if(y < 0 && x >= 0){
+            quadrant = 4
+        }
+        if (quadrant == 1 || quadrant == 2){
+            if (euclid<=28.33){
+                changeImage(imageNo: 0)
+            }else if (euclid>28.33 && euclid<=85){
+                if ((cosxy > cos(1*Double.pi/8)) && (cosxy <= cos(0*Double.pi/8))){
+                    changeImage(imageNo: 3)
+                }
+                else if ((cosxy > cos(3*Double.pi/8)) && (cosxy <= cos(1*Double.pi/8))){
+                    changeImage(imageNo:2 )
+                }
+                else if ((cosxy > cos(5*Double.pi/8)) && (cosxy <= cos(3*Double.pi/8))){
+                    changeImage(imageNo:1 )
+                }
+                else if ((cosxy > cos(7*Double.pi/8)) && (cosxy <= cos(5*Double.pi/8))){
+                    changeImage(imageNo: 8)
+                }
+                else if ((cosxy > cos(8*Double.pi/8)) && (cosxy <= cos(7*Double.pi/8))){
+                    changeImage(imageNo: 7)
+                }
+            }else if (euclid>85 && euclid<=141.66){
+                if ((cosxy > cos(1*Double.pi/8)) && (cosxy <= cos(0*Double.pi/8))){
+                    changeImage(imageNo: 11)
+                }
+                else if ((cosxy > cos(3*Double.pi/8)) && (cosxy <= cos(1*Double.pi/8))){
+                    changeImage(imageNo: 10)
+                }
+                else if ((cosxy > cos(5*Double.pi/8)) && (cosxy <= cos(3*Double.pi/8))){
+                    changeImage(imageNo:9 )
+                }
+                else if ((cosxy > cos(7*Double.pi/8)) && (cosxy <= cos(5*Double.pi/8))){
+                    changeImage(imageNo:16 )
+                }
+                else if ((cosxy > cos(8*Double.pi/8)) && (cosxy <= cos(7*Double.pi/8))){
+                    changeImage(imageNo:15 )
+                }
+            }else if (euclid>141.66 && euclid<=198.32){
+                if ((cosxy > cos(1*Double.pi/8)) && (cosxy <= cos(0*Double.pi/8))){
+                    changeImage(imageNo: 19)
+                }
+                else if ((cosxy > cos(3*Double.pi/8)) && (cosxy <= cos(1*Double.pi/8))){
+                    changeImage(imageNo: 18)
+                }
+                else if ((cosxy > cos(5*Double.pi/8)) && (cosxy <= cos(3*Double.pi/8))){
+                    changeImage(imageNo:17 )
+                }
+                else if ((cosxy > cos(7*Double.pi/8)) && (cosxy <= cos(5*Double.pi/8))){
+                    changeImage(imageNo: 24)
+                }
+                else if ((cosxy > cos(8*Double.pi/8)) && (cosxy <= cos(7*Double.pi/8))){
+                    changeImage(imageNo:23 )
+                }
+            }else if (euclid>198.32){
+                if ((cosxy > cos(2*Double.pi/8)) && (cosxy <= cos(0*Double.pi/8))){
+                    changeImage(imageNo: 26)
+                }
+                else if ((cosxy > cos(4*Double.pi/8)) && (cosxy <= cos(2*Double.pi/8))){
+                    changeImage(imageNo: 25)
+                }
+                else if ((cosxy > cos(6*Double.pi/8)) && (cosxy <= cos(4*Double.pi/8))){
+                    changeImage(imageNo: 32)
+                }
+                else if ((cosxy > cos(8*Double.pi/8)) && (cosxy <= cos(6*Double.pi/8))){
+                    changeImage(imageNo:31 )
+                }
+            }
+        } else if (quadrant == 3 || quadrant == 4){
+            if (euclid<=28.33){
+                changeImage(imageNo: 0)
+            }else if (euclid>28.33 && euclid<=85){
+                if ((cosxy > cos(8*Double.pi/8)) && (cosxy <= cos(9*Double.pi/8))){
+                    changeImage(imageNo: 7)
+                }
+                else if ((cosxy > cos(9*Double.pi/8)) && (cosxy <= cos(11*Double.pi/8))){
+                    changeImage(imageNo:6)
+                }
+                else if ((cosxy > cos(11*Double.pi/8)) && (cosxy <= cos(13*Double.pi/8))){
+                    changeImage(imageNo: 5)
+                }
+                else if ((cosxy > cos(13*Double.pi/8)) && (cosxy <= cos(15*Double.pi/8))){
+                    changeImage(imageNo: 4)
+                }
+                else if ((cosxy > cos(15*Double.pi/8)) && (cosxy <= cos(16*Double.pi/8))){
+                    changeImage(imageNo: 3)
+                }
+            }else if (euclid>85 && euclid<=141.66){
+                if ((cosxy > cos(8*Double.pi/8)) && (cosxy <= cos(9*Double.pi/8))){
+                    changeImage(imageNo: 15)
+                }
+                else if ((cosxy > cos(9*Double.pi/8)) && (cosxy <= cos(11*Double.pi/8))){
+                    changeImage(imageNo: 14)
+                }
+                else if ((cosxy > cos(11*Double.pi/8)) && (cosxy <= cos(13*Double.pi/8))){
+                    changeImage(imageNo:13 )
+                }
+                else if ((cosxy > cos(13*Double.pi/8)) && (cosxy <= cos(15*Double.pi/8))){
+                    changeImage(imageNo:12 )
+                }
+                else if ((cosxy > cos(15*Double.pi/8)) && (cosxy <= cos(16*Double.pi/8))){
+                    changeImage(imageNo: 11)
+                }
+            }else if (euclid>141.66 && euclid<=198.32){
+                if ((cosxy > cos(8*Double.pi/8)) && (cosxy <= cos(9*Double.pi/8))){
+                    changeImage(imageNo:23 )
+                }
+                else if ((cosxy > cos(9*Double.pi/8)) && (cosxy <= cos(11*Double.pi/8))){
+                    changeImage(imageNo: 22)
+                }
+                else if ((cosxy > cos(11*Double.pi/8)) && (cosxy <= cos(13*Double.pi/8))){
+                    changeImage(imageNo: 21)
+                }
+                else if ((cosxy > cos(13*Double.pi/8)) && (cosxy <= cos(15*Double.pi/8))){
+                    changeImage(imageNo: 20)
+                }
+                else if ((cosxy > cos(15*Double.pi/8)) && (cosxy <= cos(16*Double.pi/8))){
+                    changeImage(imageNo: 19)
+                }
+            }else if (euclid>198.32){
+                if ((cosxy > cos(8*Double.pi/8)) && (cosxy <= cos(10*Double.pi/8))){
+                    changeImage(imageNo: 30)
+                }
+                else if ((cosxy > cos(10*Double.pi/8)) && (cosxy <= cos(12*Double.pi/8))){
+                    changeImage(imageNo: 29)
+                }
+                else if ((cosxy > cos(12*Double.pi/8)) && (cosxy <= cos(14*Double.pi/8))){
+                    changeImage(imageNo: 28)
+                }
+                else if ((cosxy > cos(14*Double.pi/8)) && (cosxy <= cos(16*Double.pi/8))){
+                    changeImage(imageNo:27 )
+                }
+            }
+        }
+    }
+    
+    func changeImage(imageNo: Int){
+        imageView.image = UIImage(named: "color"+String(imageNo))
+
+        selectedEmotion = imageNo
+        print()
+        //imageView.isUserInteractionEnabled = true
+        //imageView.addGestureRecognizer(tapGesture)
     }
     
     @objc func openKeyboard(notification: Notification) {
@@ -120,10 +316,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return 0
     }
     
+    //ToDo:バックエンドとの整合性のためにも、配列にリストナンバーを格納しておく方法にシフトを検討
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        print("\(indexPath.row)番目の行が選択されました。")
-        //テストのためコメントアウト
-        //postListNo(listNo: indexPath.row)
+        if (tableView == tableView1){
+            print("\(indexPath.row)番目の行が選択されました。")
+            //テストのためコメントアウト
+            //postListNo(listNo: indexPath.row)
+        }
     }
     
     
@@ -133,6 +332,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomTableViewCell
             if let customCell = cell as? CustomTableViewCell {
                 customCell.content.text = item[indexPath.row]
+                //Todo:ここでcustomCellの葉のイメージを加える。
+                //客観的な感情が何かを受け取った後に、このクラスの変数に格納する必要がある。そして、その感情によって客観的な感情の画像も表示させる。
                 print(indexPath.row)
             }
             
@@ -146,6 +347,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell = tableView.dequeueReusableCell(withIdentifier: "inputCell", for: indexPath) as! InputCell
             if let inputCell = cell as? InputCell {
                 inputCell.superView = self
+                self.inputcell = inputCell
             }
             
             var cellSelectedBgView2 = UIView()
@@ -169,9 +371,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
                 self.view.endEditing(true)
     }
-     */
+    */
     
     @objc func deleteButtonPressed(_ sender: UIBarButtonItem) {
+        secondVC.previousVC = self
         self.present(secondVC, animated: true, completion: nil)
     }
     
