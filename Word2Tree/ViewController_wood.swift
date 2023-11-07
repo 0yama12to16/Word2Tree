@@ -50,7 +50,10 @@ class ViewController_wood: UIViewController{
         //ToDo画像変更のコード
     }
     
+    //ToDo:ここの部分をViewControllerのタッチ時の部分のように改変する。現在だとViewController_woodのどのコンポーネントをタッチしても反応する。
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //for test
+        print(imageView.clipsToBounds)
         let touch = touches.first!
         let location = touch.location(in: self.imageView)
         Swift.print(type(of: location))
@@ -82,6 +85,9 @@ class ViewController_wood: UIViewController{
     
     @objc func deleteButtonPressed(_ sender: UIBarButtonItem) {
         print(imageCounter)
+        self.previousVC?.imageView.image = UIImage(named: "color")
+        self.previousVC?.selectedEmotion = 100
+        self.previousVC?.inputcell.postButton.isEnabled = false
         self.dismiss(animated: true)
     }
 }
