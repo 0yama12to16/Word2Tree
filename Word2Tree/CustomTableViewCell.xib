@@ -37,6 +37,7 @@
             <connections>
                 <outlet property="content" destination="22W-Uk-g4P" id="sp8-2G-7oL"/>
                 <outlet property="leafBox" destination="5EV-Px-Pti" id="aI6-ca-cmP"/>
+                <outlet property="leafBoxS" destination="48m-mg-OhT" id="4dP-r9-hFb"/>
             </connections>
             <point key="canvasLocation" x="199.23664122137404" y="-5.9859154929577469"/>
         </tableViewCell>

@@ -22,6 +22,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //indexをリストIDとして利用
     var item: [String] = []
     var emotionList: [Int] = []
+    var emotionListO: [Int] = []
     
     var keyboardFlag: Bool = false
     let secondVC = ViewController_wood()
@@ -30,6 +31,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //選択されている感情（default値は100）
     var selectedEmotion: Int = 100
     var inputcell: InputCell!
+    
+    //LastToDo:tableView_listの下の方が見切れるのを治す。
     
     
     
@@ -321,7 +324,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if (tableView == tableView1){
             print("\(indexPath.row)番目の行が選択されました。")
             //テストのためコメントアウト
-            //postListNo(listNo: indexPath.row)
+            postListNo(listNo: indexPath.row)
         }
     }
     
@@ -332,8 +335,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! CustomTableViewCell
             if let customCell = cell as? CustomTableViewCell {
                 customCell.content.text = item[indexPath.row]
-                //Todo:ここでcustomCellの葉のイメージを加える。
-                //客観的な感情が何かを受け取った後に、このクラスの変数に格納する必要がある。そして、その感情によって客観的な感情の画像も表示させる。
+                customCell.leafBoxS.image = UIImage(named: "leaf"+String(emotionList[indexPath.row]))
+                print(emotionListO)
+                //LastToDo:ここで以下をアンコメントすると、バックエンドから感情が返ってきていない状態で、以下を実行するためindexOutOfRangeとなる。
+                //customCell.leafBox.image = UIImage(named: "leaf"+String(emotionListO[indexPath.row]))
+
                 print(indexPath.row)
             }
             

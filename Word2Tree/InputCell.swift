@@ -56,7 +56,7 @@ class InputCell: UITableViewCell{
         //テストのため以下をコメントアウト
         //doPost(prompt: content2.text!)
         //テストのため以下をコメントアウト
-        //getEmoO(emoNoS: superView.selectedEmotion, content: content2.text!)
+        getEmoO(emoNoS: superView.selectedEmotion, content: content2.text!, viewController: superView)
         //上記のhttpgetで得た客観的感情をViewControllerクラスに渡す。
         //行を追加するよりも先にViewControllerクラスに客観的感情を渡す必要があるので、これを上記の処理より先に持ってきた方が良い？
         //superView.secondVC.imageCounter += 1
@@ -64,9 +64,6 @@ class InputCell: UITableViewCell{
         //viewContoroller_woodを更新
         superView.secondVC.updateImage()
         
-        
-        //for test
-        print(content2.text.isEmpty)
         
         content2.text = ""
         content2.changeVisibility()

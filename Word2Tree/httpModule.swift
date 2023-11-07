@@ -27,10 +27,28 @@ func postPosLeaf(x: Double, y: Double){
     }
 }
 
-func getEmoO(emoNoS: Int,content: String){
-    let uri = domain+":"+port+"/getEmoO?emoNoS="+String(emoNoS)+"&content="+String(content)
+//response:image of wood, EmoO
+func getEmoO(emoNoS: Int,content: String,viewController: ViewController){
+    var uri: String!
+//    if let data = content.data(using: .utf8) {
+//        if let utf8String = String(data: data, encoding: .utf8) {
+//            uri = domain+":"+port+"/getEmoO?emoNoS="+String(emoNoS)+"&content="+utf8String // 結果を出力する
+//        }
+//    }
+    let encoded: String = content.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
+    uri = domain+":"+port+"/getEmoO?emoNoS="+String(emoNoS)+"&content="+encoded
+
+    print(uri)
     AF.request(uri, method: .get, encoding: JSONEncoding.default, headers: nil).response { response in
-        print(response.value!!)
+        if let data = response.data {
+            print(String(data: data, encoding: .utf8)!.split(separator: ",")[0].split(separator: ":")[1].count)
+            
+            let jsonObject = try? JSONDecoder.init().decode(ResModel.self, from: data)
+            print(jsonObject)
+            let newWood: UIImage = convertBase64ToImage(jsonObject!.image)!
+            viewController.secondVC.imageView.image = newWood
+            viewController.emotionListO.append(jsonObject!.EmoS)
+        }
     }
 }
 
