@@ -61,7 +61,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         
-        tableView_list = UITableView(frame:CGRect(x:0,y:0,width:view.bounds.width/2,height:view.bounds.height-90),style:.plain)
+        tableView_list = UITableView(frame:CGRect(x:0,y:0,width:view.bounds.width/2,height:view.bounds.height-50),style:.plain)
         tableView_list.delegate = self
         tableView_list.dataSource = self
         tableView_below_bar.addSubview(tableView_list)
@@ -84,7 +84,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         view.layer.addSublayer(borderLayer)
         
         //Todo:tableViewがtableView1とtableView_listで二重になってるっぽい？
-        tableView1 = UITableView(frame:CGRect(x: 0, y:0, width:view.bounds.width, height: view.bounds.height), style: .plain)
+        tableView1 = UITableView(frame:CGRect(x: 0, y:0, width:view.bounds.width, height: tableView_list.bounds.height), style: .plain)
         tableView1.delegate = self
         tableView1.dataSource = self
         tableView_list.addSubview(tableView1)

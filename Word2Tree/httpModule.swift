@@ -38,16 +38,19 @@ func getEmoO(emoNoS: Int,content: String,viewController: ViewController){
     let encoded: String = content.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
     uri = domain+":"+port+"/getEmoO?emoNoS="+String(emoNoS)+"&content="+encoded
 
-    print(uri)
     AF.request(uri, method: .get, encoding: JSONEncoding.default, headers: nil).response { response in
         if let data = response.data {
-            print(String(data: data, encoding: .utf8)!.split(separator: ",")[0].split(separator: ":")[1].count)
-            
-            let jsonObject = try? JSONDecoder.init().decode(ResModel.self, from: data)
-            print(jsonObject)
-            let newWood: UIImage = convertBase64ToImage(jsonObject!.image)!
-            viewController.secondVC.imageView.image = newWood
-            viewController.emotionListO.append(jsonObject!.EmoS)
+            if (Int(String(data: data, encoding: .utf8)!) == -1){
+            }
+            else{
+                print(String(data: data, encoding: .utf8)!.split(separator: ",")[0].split(separator: ":")[1].count)
+                
+                let jsonObject = try? JSONDecoder.init().decode(ResModel.self, from: data)
+                //print(jsonObject)
+                let newWood: UIImage = convertBase64ToImage(jsonObject!.image)!
+                viewController.secondVC.imageView.image = newWood
+                viewController.emotionListO.append(jsonObject!.EmoS)
+            }
         }
     }
 }
