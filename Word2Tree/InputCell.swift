@@ -43,15 +43,6 @@ class InputCell: UITableViewCell{
     }
 
     @IBAction func buttonTapped(_ sender: Any) {
-        superView.item.append("")
-        superView.item[superView.item.count-1].append(content2.text!)
-        
-        superView.emotionList.append(superView.selectedEmotion)
-        
-        
-        let indexPath = IndexPath(row: superView.item.count - 1, section: 0)
-        superView.tableView1.insertRows(at: [indexPath], with: .automatic)
-        
         
         //テストのため以下をコメントアウト
         //doPost(prompt: content2.text!)
@@ -96,6 +87,18 @@ class InputCell: UITableViewCell{
 //            postButton.isEnabled = false
 //        }
 //    }
+    
+    func addingCell(){
+        superView.item.append("")
+        superView.item[superView.item.count-1].append(content2.text!)
+        
+        superView.emotionList.append(superView.selectedEmotion)
+        
+        
+        let indexPath = IndexPath(row: superView.item.count - 1, section: 0)
+        superView.tableView1.insertRows(at: [indexPath], with: .automatic)
+    }
+    
     
 }
 

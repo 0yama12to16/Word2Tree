@@ -49,6 +49,7 @@ func getEmoO(emoNoS: Int,content: String,viewController: ViewController){
                 //print(jsonObject)
                 let newWood: UIImage = convertBase64ToImage(jsonObject!.image)!
                 viewController.secondVC.imageView.image = newWood
+                viewController.inputcell.addingCell()
                 viewController.emotionListO.append(jsonObject!.EmoS)
             }
         }
