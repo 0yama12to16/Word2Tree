@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-var domain: String = "http://localhost"
+var domain: String = "http://192.168.0.2"
 var port: String = "5000"
 
 //Done

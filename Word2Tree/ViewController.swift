@@ -47,7 +47,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     
         
-        navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height:100 ))
+        navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: view.frame.width, height:100))
         navigationBar.barTintColor = UIColor.gray // バーの背景色
         navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white] //タイトルのテキストカラー
         let navigationItem = UINavigationItem()
