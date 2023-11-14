@@ -49,8 +49,13 @@ func getEmoO(emoNoS: Int,content: String,viewController: ViewController){
                 //print(jsonObject)
                 let newWood: UIImage = convertBase64ToImage(jsonObject!.image)!
                 viewController.secondVC.imageView.image = newWood
-                viewController.inputcell.addingCell()
+                viewController.emotionList.append(emoNoS)
                 viewController.emotionListO.append(jsonObject!.EmoS)
+                viewController.inputcell.addingCell()
+                viewController.item.append("")
+                viewController.item[viewController.item.count-1].append(content)
+                let indexPath = IndexPath(row: viewController.item.count - 1, section: 0)
+                viewController.tableView1.insertRows(at: [indexPath], with: .automatic)
             }
         }
     }

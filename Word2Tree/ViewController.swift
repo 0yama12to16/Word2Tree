@@ -338,7 +338,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 customCell.leafBoxS.image = UIImage(named: "leaf"+String(emotionList[indexPath.row]))
                 print(emotionListO)
                 //LastToDo:ここで以下をアンコメントすると、バックエンドから感情が返ってきていない状態で、以下を実行するためindexOutOfRangeとなる。
-                //customCell.leafBox.image = UIImage(named: "leaf"+String(emotionListO[indexPath.row]))
+                customCell.leafBox.image = UIImage(named: "leaf"+String(emotionListO[indexPath.row]))
 
                 print(indexPath.row)
             }

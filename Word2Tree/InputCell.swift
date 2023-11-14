@@ -89,14 +89,7 @@ class InputCell: UITableViewCell{
 //    }
     
     func addingCell(){
-        superView.item.append("")
-        superView.item[superView.item.count-1].append(content2.text!)
         
-        superView.emotionList.append(superView.selectedEmotion)
-        
-        
-        let indexPath = IndexPath(row: superView.item.count - 1, section: 0)
-        superView.tableView1.insertRows(at: [indexPath], with: .automatic)
     }
     
     
