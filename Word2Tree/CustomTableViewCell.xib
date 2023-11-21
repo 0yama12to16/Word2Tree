@@ -17,18 +17,18 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="内容" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22W-Uk-g4P">
-                        <rect key="frame" x="20" y="30" width="350" height="113"/>
+                        <rect key="frame" x="20" y="30" width="277" height="113"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="leaf_01" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5EV-Px-Pti">
-                        <rect key="frame" x="480" y="30" width="135" height="113"/>
+                        <rect key="frame" x="415" y="51" width="85" height="77"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="leaf_01" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="48m-mg-OhT">
-                        <rect key="frame" x="378" y="30" width="135" height="113"/>
+                        <rect key="frame" x="311" y="51" width="87" height="77"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                 </subviews>
@@ -37,6 +37,7 @@
             <connections>
                 <outlet property="content" destination="22W-Uk-g4P" id="sp8-2G-7oL"/>
                 <outlet property="leafBox" destination="5EV-Px-Pti" id="aI6-ca-cmP"/>
+                <outlet property="leafBoxS" destination="48m-mg-OhT" id="4dP-r9-hFb"/>
             </connections>
             <point key="canvasLocation" x="199.23664122137404" y="-5.9859154929577469"/>
         </tableViewCell>

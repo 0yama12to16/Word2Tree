@@ -12,6 +12,7 @@ class CustomTableViewCell: UITableViewCell {
 
     @IBOutlet weak var leafBox: UIImageView!
     @IBOutlet weak var content: UILabel!
+    @IBOutlet weak var leafBoxS: UIImageView!
     
     var superView1: ViewController! = nil
     

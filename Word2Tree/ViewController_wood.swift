@@ -8,7 +8,7 @@ import UIKit
 
 class ViewController_wood: UIViewController{
     
-    var imageView: UIImageView!
+    var imageView: UIImageView = UIImageView(image: UIImage(named: "dammy_tree"))
     var navigationBar: UINavigationBar!
     var imageCounter: Int = 0
     
@@ -38,7 +38,7 @@ class ViewController_wood: UIViewController{
         
         
         
-        imageView = UIImageView(image: UIImage(named: "dammy_tree"))
+        //imageView = UIImageView(image: UIImage(named: "dammy_tree"))
         imageView.frame = CGRect(x:0 , y: 50, width: (previousVC?.view.bounds.width)!, height: (previousVC?.view.bounds.height)!-50) // 位置とサイズの設定
         view.addSubview(imageView)
         // Do any additional setup after loading the view.
@@ -48,6 +48,7 @@ class ViewController_wood: UIViewController{
     }
     func updateImage() {
         //ToDo画像変更のコード
+        //imageView.image = UIImage(named: "tree"+String(imageCounter))
     }
     
     //ToDo:ここの部分をViewControllerのタッチ時の部分のように改変する。現在だとViewController_woodのどのコンポーネントをタッチしても反応する。
@@ -64,7 +65,7 @@ class ViewController_wood: UIViewController{
         print(x,y)
         print(xPerView,yPerView)
         //テストのため以下はコメントアウト
-        //postPosLeaf(x: x, y: y)
+        postPosLeaf(x: xPerView, y: yPerView)
     }
         
     
